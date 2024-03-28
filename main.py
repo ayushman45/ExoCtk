@@ -48,5 +48,6 @@ for i in temp:
                             for p in cloud:
                                 filename = "{}x{}x{}x{}x{}x{}x{}x{}.txt".format(i,j,k,l,m,n,o,p)
                                 if(FileHelper().findFile("data_values", filename)):
+                                    print("{} already exists".format(filename))
                                     continue
                                 generateData(filename,i, j, k, l, m, n, o, p)
