@@ -12,3 +12,7 @@ class FileHelper:
     def insertOne(self, path, file_name, file):
         with open("{}/{}".format(path, file_name), "w") as f:
             f.write(file)
+
+    def findFile(self,folder_path,file_name):
+            file_path = os.path.join(folder_path, file_name)
+            return os.path.exists(file_path)
