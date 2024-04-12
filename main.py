@@ -17,7 +17,7 @@ def generateData(filename,temp, g, r_planet, r_star, metallicity, c_o, haze, clo
         temp, g, r_planet, r_star, metallicity, c_o, haze, cloud
     )
     if data_file:
-        vector_file = transform(data_file,temp, g,r_planet,r_star,metallicity, c_o,haze,cloud)
+        vector_file = (',').join(transform(data_file,temp, g,r_planet,r_star,metallicity, c_o,haze,cloud).split())
         folder_path = "data_values"
         FileHelper().insertOne(folder_path, filename, vector_file)
         print("{} generated in {}".format(filename,folder_path))
@@ -46,7 +46,7 @@ for i in temp:
                     for n in c_o:
                         for o in haze:
                             for p in cloud:
-                                filename = "{}x{}x{}x{}x{}x{}x{}x{}.txt".format(i,j,k,l,m,n,o,p)
+                                filename = "{}x{}x{}x{}x{}x{}x{}x{}.csv".format(i,j,k,l,m,n,o,p)
                                 if(FileHelper().findFile("data_values", filename)):
                                     print("{} already exists".format(filename))
                                     continue
