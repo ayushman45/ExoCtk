@@ -10,6 +10,10 @@ class FileHelper:
                 os.remove(file_path)
 
     def insertOne(self, path, file_name, file):
+        if(os.path.exists("{}/{}".format(path, file))):
+            with open("{}/{}".format(path, file),"a") as f:
+                f.write(file+'\n')
+            return
         with open("{}/{}".format(path, file_name), "w") as f:
             f.write(file)
 

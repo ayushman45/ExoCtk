@@ -1,5 +1,6 @@
 from ExoCtk import ExoCtk
 from FileHelper import FileHelper
+from Converter import Converter
 
 exo_ctk = ExoCtk()
 
@@ -27,27 +28,41 @@ if(choice=="y"):
     FileHelper().removeAll("data_values")
     print("Deleted all previously generated data")
 
-temp = ["400"]
-for i in range(6, 27):
-    temp.append(str(i * 100))
-g = ["5", "10", "20", "50"]
-r_planet = ["1","1.5"]
-r_star = ["0.1","0.9"]
-metallicity = ["1", "10", "50", "100", "200"]
-c_o = ["0.35", "0.56", "0.70", "1.00"]
-haze = ["0001", "0010", "0100", "1100"]
-cloud = ["0.00", "0.06", "0.20", "1.00"]
+#dummy values for temperature
+temp = ["400","600","700"]
 
-for i in temp:
-    for j in g:
-        for k in r_planet:
-            for l in r_star:
-                for m in metallicity:
-                    for n in c_o:
-                        for o in haze:
-                            for p in cloud:
-                                filename = "{}x{}x{}x{}x{}x{}x{}x{}.csv".format(i,j,k,l,m,n,o,p)
-                                if(FileHelper().findFile("data_values", filename)):
-                                    print("{} already exists".format(filename))
-                                    continue
-                                generateData(filename,i, j, k, l, m, n, o, p)
+#dummy values for gravity
+g = ["5", "10"]
+
+#dummy values for radius of planet
+r_planet = ["1","1.5"]
+
+#dummy value for radius of star
+r_star = ["0.1","0.9"]
+
+#dummy value for metallicity
+metallicity = ["1", "10"]
+
+#dummy value for carbon-oxygen ratio
+c_o = ["0.35"]
+
+#dummy value for haze
+haze = ["0001"]
+
+#dummy value for cloud
+cloud = ["0.00"]
+
+# for i in temp:
+#     for j in g:
+#         for k in r_planet:
+#             for l in r_star:
+#                 for m in metallicity:
+#                     for n in c_o:
+#                         for o in haze:
+#                             for p in cloud:
+#                                 filename = "{}x{}x{}x{}x{}x{}x{}x{}.csv".format(i,j,k,l,m,n,o,p)
+#                                 if(FileHelper().findFile("data_values", filename)):
+#                                     print("{} already exists".format(filename))
+#                                     continue
+#                                 generateData(filename,i, j, k, l, m, n, o, p)
+Converter().convert()
