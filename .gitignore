@@ -3,9 +3,3 @@ __pycache__
 
 # Ignore virtual environment directory
 myenv
-
-# Ignore files within data_values directory
-data_values/*
-
-# Ignore files within csv_data directory
-csv_data/*
