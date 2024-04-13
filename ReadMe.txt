@@ -1,5 +1,7 @@
 Instruction for Installing
-1. python -m venv myenv
-2. source myenv/Scripts/activate or source myenv/bin/activate
-3. pip install -r requirements.txt
-4. python main.py
+1. mkdir data_values
+2.mkdir csv_data
+3. python -m venv myenv
+4. source myenv/Scripts/activate or source myenv/bin/activate
+5. pip install -r requirements.txt
+6. python main.py
